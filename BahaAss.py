@@ -66,7 +66,7 @@ class BahaAss(object):
         self._sn_dict[sn] = h1_list[0][1]
 
         sn_list = re.findall(
-            r'<a href=\"\?sn=(\d+)\">(\S+)</a>', base_response.text)
+            r'<a href=\"\?sn=(\d+)\"[^>]*>(\S+)</a>', base_response.text)
         _max = 0
         for sn in sn_list:
             self._sn_dict[sn[0]] = int(sn[1])
